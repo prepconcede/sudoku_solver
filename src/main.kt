@@ -1,3 +1,5 @@
+import java.time.LocalTime
+
 fun main(args: Array<String>) {
     val rows = listOf(
         "800000000",
@@ -10,5 +12,8 @@ fun main(args: Array<String>) {
         "008500010",
         "090000400"
     )
+    val start = LocalTime.now().toNanoOfDay()
     Sudoku(rows).solve()
+    val end = LocalTime.now().toNanoOfDay()
+    println("solved in ${(end - start) / 1e9} seconds")
 }
